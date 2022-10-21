@@ -1,0 +1,44 @@
+@baseUrl = http://localhost:8000/v1
+
+# @name register user
+
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+    "username": "isAdmin",
+    "email": "admin@gmail.com",
+    "password": "200"
+}
+
+###
+# @name login user
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+    "username": "isAdmin",
+    "password": "200"
+}
+
+###
+# @name Refresh token
+POST {{baseUrl}}/auth/refresh
+Cookie: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNGY4MGJmMDVmOTI5OGEyOTk4MDcyNSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjYxNjI2MDUsImV4cCI6MTY2NjE2OTgwNX0.34zwbD9nzb9CD0CDuT-NTpS5A-u-C7P1wNYBJkeUFx8
+
+###
+# @name logout user
+POST {{baseUrl}}/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNGY4MGJmMDVmOTI5OGEyOTk4MDcyNSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjYzMzQ4NzIsImV4cCI6MTY2NjM0MjA3Mn0.lym21ZGiMrVrePiflPEjwwl8UsdGysod1twbJLDd3WM
+
+###
+# @name Get all users
+
+GET  {{baseUrl}}/user/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNGY4MGJmMDVmOTI5OGEyOTk4MDcyNSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjYzMzQ4NzIsImV4cCI6MTY2NjM0MjA3Mn0.lym21ZGiMrVrePiflPEjwwl8UsdGysod1twbJLDd3WM
+
+###
+# @name Delete user
+
+DELETE {{baseUrl}}/user/635121eba9a2a53565ba6e11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNGY4MGJmMDVmOTI5OGEyOTk4MDcyNSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjYzMzQ4NzIsImV4cCI6MTY2NjM0MjA3Mn0.lym21ZGiMrVrePiflPEjwwl8UsdGysod1twbJLDd3WM
